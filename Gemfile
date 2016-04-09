@@ -19,3 +19,4 @@ gem 'middleman-autoprefixer'
 gem 'middleman-deploy', '~> 1.0'
 gem 'middleman-jquery'
 gem "contentful_middleman"
+gem 'middleman-dotenv'
