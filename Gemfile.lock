@@ -7,6 +7,12 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
+    autoprefixer-rails (6.3.6)
+      execjs
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     chunky_png (1.3.5)
@@ -26,6 +32,16 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
+    contentful (0.9.0)
+      http (~> 0.8)
+      multi_json (~> 1)
+    contentful-webhook-listener (0.1.0)
+    contentful_middleman (1.2.0)
+      contentful (~> 0.8)
+      contentful-webhook-listener (~> 0.1)
+      middleman-core (~> 3.3)
+    domain_name (0.5.20160310)
+      unf (>= 0.0.5, < 1.0.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -39,6 +55,14 @@ GEM
     hitimes (1.2.3)
     hooks (0.4.1)
       uber (~> 0.0.14)
+    http (0.9.9)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    http-form_data (1.0.1)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     json (1.8.3)
@@ -58,6 +82,9 @@ GEM
       middleman-sprockets (>= 3.1.2)
       sass (>= 3.4.0, < 4.0)
       uglifier (~> 2.5)
+    middleman-autoprefixer (2.7.0)
+      autoprefixer-rails (>= 6.3.1, < 7.0.0)
+      middleman-core (>= 3.3.3)
     middleman-core (3.3.12)
       activesupport (~> 4.1.0)
       bundler (~> 1.1)
@@ -70,6 +97,12 @@ GEM
       rack-test (~> 0.6.2)
       thor (>= 0.15.2, < 2.0)
       tilt (~> 1.4.1, < 2.0)
+    middleman-deploy (1.0.0)
+      middleman-core (>= 3.2)
+      net-sftp
+      ptools
+    middleman-jquery (2.1.1)
+      thor (>= 0.14, < 2.0)
     middleman-livereload (3.1.1)
       em-websocket (>= 0.2.0)
       middleman-core (>= 3.0.2)
@@ -82,12 +115,16 @@ GEM
       sprockets-sass (~> 1.3.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (3.1.1)
     padrino-helpers (0.12.5)
       i18n (~> 0.6, >= 0.6.7)
       padrino-support (= 0.12.5)
       tilt (~> 1.4.1)
     padrino-support (0.12.5)
       activesupport (>= 3.1)
+    ptools (1.3.3)
     rack (1.6.4)
     rack-livereload (0.3.16)
       rack
@@ -118,12 +155,20 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
+  contentful_middleman
   middleman (~> 3.3.12)
+  middleman-autoprefixer
+  middleman-deploy (~> 1.0)
+  middleman-jquery
   middleman-livereload (~> 3.1.0)
   tzinfo-data
   wdm (~> 0.1.0)
