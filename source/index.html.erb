@@ -2,9 +2,29 @@
 title: Welcome to Middleman
 ---
 
-<div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+<div class="row">
+<% data.nathan.blog_post.each do |post| %>
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-12"><%= post[1].author[0].name %></div>
+        <div class="col-xs-12"><%= post[1].title %></div>
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12"><%= post[1].body %></div>
+            <div class="col-xs-12">
+	            <% if post[1].tags %>
+	            <ul>
+	            	<% post[1].tags.each do |tag|%>
+	            	<li><%= tag %></li>
+	            	<% end %>
+	        	</ul>
+	        	<% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12"><%= post[1].category[0]['title'] %></div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

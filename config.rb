@@ -1,5 +1,16 @@
+require 'bootstrap-sass'
 # Uses .env in the root of the project
 activate :dotenv
+
+activate :contentful do |f|
+  f.space         = {nathan: ENV['SPACE']}
+  f.access_token  = ENV['ACCESS_TOKEN']
+  f.content_types = {
+      blog_post: ENV['BLOG_POST_KEY']
+    }
+  # f.cda_query     = QUERY
+  # f.content_types = CONTENT_TYPES_MAPPINGS
+end
 
 ###
 # Compass
